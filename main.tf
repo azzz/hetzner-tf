@@ -97,6 +97,7 @@ resource "hcloud_server_network" "master_vpc" {
 
   server_id  = hcloud_server.master.*.id[count.index]
   network_id = hcloud_network.vpc.id
+  ip         = "172.16.0.100"
 }
 
 resource "hcloud_server_network" "worker_vpc" {
